@@ -44,13 +44,13 @@ object Constants {
         )
         questionList.add(que8)
         val que9 = Question(9,"What country does this flag belong to?",
-            R.drawable.picture,"argentina","australia","Brazill","Thailand"
-            ,1
+            R.drawable.flag_france,"Ireland","Greece","France","Belarus"
+            ,3
         )
         questionList.add(que9)
         val que10 = Question(10,"What country does this flag belong to?",
-            R.drawable.picture,"argentina","australia","Brazill","Thailand"
-            ,1
+            R.drawable.flag_germany,"Albania","Czech Republic","Croatia","Germany"
+            ,4
         )
         questionList.add(que10)
         return questionList
