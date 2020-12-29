@@ -30,6 +30,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
         tv_option_four.setOnClickListener(this)
         btn_submit.setOnClickListener(this)
     }
+    //เป็นฟังก์ชัน set ชุดคำถามใหม่หลังจากกด next question
     private fun setQuestion(){
 
         val question =  mQuestionsList!![mCurrentPosition-1]
@@ -49,6 +50,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
         tv_option_three.text = question.optionThree
         tv_option_four.text = question.optionFour
     }
+    //เป็นฟังก์ชันตั้งสีมาตรฐานของปุ่ม option
     private fun defaultOptionsView(){
         val Options = ArrayList<TextView>()
         Options.add(0,tv_option_one)
@@ -106,6 +108,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
             }
         }
     }
+    //เป็นฟังก์ชันโชว์คำตอบ
     private fun answerView(answer:Int,drawbleView:Int){
         when(answer){
             1 ->{
@@ -122,6 +125,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
             }
         }
     }
+    //เป็นฟังก์ชันเลือก option แล้วเปลี่ยนสีกรอบเป็นสีม่วงและตัวอักษรสีดำเข้ม
     private fun selectOptionView(tv:TextView,selectedOptionNum:Int ){
         defaultOptionsView()
         mSelectionOptionPosition = selectedOptionNum
