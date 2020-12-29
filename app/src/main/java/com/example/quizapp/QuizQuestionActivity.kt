@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_quiz_question.*
 import java.util.*
@@ -30,7 +31,15 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
         btn_submit.setOnClickListener(this)
     }
     private fun setQuestion(){
+
         val question =  mQuestionsList!![mCurrentPosition-1]
+        defaultOptionsView()
+        if(mCurrentPosition == mQuestionsList!!.size){
+            btn_submit.text = "Finish"
+        }else{
+            btn_submit.text="Submit"
+        }
+
         progressBar.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
         tv_question.text = question!!.question
@@ -56,29 +65,43 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
         }
     }
     override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.tv_option_one ->{
-                selectOptionView(tv_option_one,1)
+        when (v?.id) {
+            R.id.tv_option_one -> {
+                selectOptionView(tv_option_one, 1)
             }
-            R.id.tv_option_two ->{
-                selectOptionView(tv_option_two,2)
+            R.id.tv_option_two -> {
+                selectOptionView(tv_option_two, 2)
             }
-            R.id.tv_option_three ->{
-                selectOptionView(tv_option_three,3)
+            R.id.tv_option_three -> {
+                selectOptionView(tv_option_three, 3)
             }
-            R.id.tv_option_four ->{
-                selectOptionView(tv_option_four,4)
+            R.id.tv_option_four -> {
+                selectOptionView(tv_option_four, 4)
             }
-            R.id.btn_submit ->{
-                if(mSelectionOptionPosition == 0){
-                    mCurrentPosition ++
-
-                    when{
-                        mCurrentPosition<=mQuestionsList!!.size ->{
-                            setQuestion()
-
-                        }
+            R.id.btn_submit -> {
+                if (mSelectionOptionPosition == 0) {
+                    mCurrentPosition++
+                    if (mCurrentPosition <= mQuestionsList!!.size) {
+                        setQuestion()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "You have successfully completed the quiz",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
+                } else {
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
+                    if (question!!.correctAnswer != mSelectionOptionPosition) {
+                        answerView(mSelectionOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+                    if (mCurrentPosition == mQuestionsList!!.size) {
+                        btn_submit.text = "Finish"
+                    } else {
+                        btn_submit.text = "Go to next question"
+                    }
+                    mSelectionOptionPosition = 0
                 }
             }
         }
