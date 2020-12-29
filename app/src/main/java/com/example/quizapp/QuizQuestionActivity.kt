@@ -27,6 +27,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
         tv_option_two.setOnClickListener(this)
         tv_option_three.setOnClickListener(this)
         tv_option_four.setOnClickListener(this)
+        btn_submit.setOnClickListener(this)
     }
     private fun setQuestion(){
         val question =  mQuestionsList!![mCurrentPosition-1]
@@ -68,7 +69,34 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
             R.id.tv_option_four ->{
                 selectOptionView(tv_option_four,4)
             }
+            R.id.btn_submit ->{
+                if(mSelectionOptionPosition == 0){
+                    mCurrentPosition ++
 
+                    when{
+                        mCurrentPosition<=mQuestionsList!!.size ->{
+                            setQuestion()
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private fun answerView(answer:Int,drawbleView:Int){
+        when(answer){
+            1 ->{
+                tv_option_one.background  = ContextCompat.getDrawable(this,drawbleView)
+            }
+            2 ->{
+                tv_option_two.background  = ContextCompat.getDrawable(this,drawbleView)
+            }
+            3 ->{
+                tv_option_three.background  = ContextCompat.getDrawable(this,drawbleView)
+            }
+            4 ->{
+                tv_option_four.background  = ContextCompat.getDrawable(this,drawbleView)
+            }
         }
     }
     private fun selectOptionView(tv:TextView,selectedOptionNum:Int ){
