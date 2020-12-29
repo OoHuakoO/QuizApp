@@ -54,6 +54,7 @@
             android:textColorHint="#7A8089"
             android:textSize="14sp"
             android:text="0/10"
+            android:id="@+id/tv_progress"
             ></TextView>
     </LinearLayout>
     <TextView
@@ -66,7 +67,54 @@
         android:padding="15dp"
         android:textColorHint="#7A8089"
         android:textSize="18sp"
-        android:text="Apple"
+        android:text="argentina"
         ></TextView>
+    <TextView
+        android:id="@+id/tv_option_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/defaults_option_border_bg"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColorHint="#7A8089"
+        android:textSize="18sp"
+        android:text="australia"
+        ></TextView>
+    <TextView
+        android:id="@+id/tv_option_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/defaults_option_border_bg"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColorHint="#7A8089"
+        android:textSize="18sp"
+        android:text="Brazil"
+        ></TextView>
+    <TextView
+        android:id="@+id/tv_option_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/defaults_option_border_bg"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColorHint="#7A8089"
+        android:textSize="18sp"
+        android:text="Thailand"
+        ></TextView>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:text="Submit"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        ></Button>
 </LinearLayout>
 </ScrollView>

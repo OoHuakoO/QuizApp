@@ -4,12 +4,12 @@ object Constants {
     fun getQuestions(): ArrayList<Question>{
         val questionList = ArrayList<Question>()
         val que1 = Question(1,"What country does this flag belong to?",
-            R.drawable.flag_argentina,"argentina","australia","Brazill","Thailand"
+            R.drawable.flag_argentina,"Argentina","Australia","Brazil","Thailand"
         ,1
         )
         questionList.add(que1)
         val que2 = Question(2,"What country does this flag belong to?",
-            R.drawable.flag_denmark,"Belarus","australia","Denmark","Germany"
+            R.drawable.flag_denmark,"Belarus","Australia","Denmark","Germany"
             ,3
         )
         questionList.add(que2)
@@ -19,12 +19,12 @@ object Constants {
         )
         questionList.add(que3)
         val que4 = Question(4,"What country does this flag belong to?",
-            R.drawable.flag_brazill,"Iceland","Hungary","Brazill","Thailand"
+            R.drawable.flag_brazill,"Iceland","Hungary","Brazil","Thailand"
             ,3
         )
         questionList.add(que4)
         val que5 = Question(5,"What country does this flag belong to?",
-            R.drawable.flag_thailand,"australia","Bulgaria","Croatia","Thailand"
+            R.drawable.flag_thailand,"Australia","Bulgaria","Croatia","Thailand"
             ,4
         )
         questionList.add(que5)
@@ -34,7 +34,7 @@ object Constants {
         )
         questionList.add(que6)
         val que7 = Question(7,"What country does this flag belong to?",
-            R.drawable.flag_portugal,"Portugal","Romania","Brazill","Spain"
+            R.drawable.flag_portugal,"Portugal","Romania","Brazil","Spain"
             ,1
         )
         questionList.add(que7)
