@@ -27,12 +27,8 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
         tv_option_two.setOnClickListener(this)
         tv_option_three.setOnClickListener(this)
         tv_option_four.setOnClickListener(this)
-
-
     }
     private fun setQuestion(){
-        val mCurrentPosition = 1
-        defaultOptionsView()
         val question =  mQuestionsList!![mCurrentPosition-1]
         progressBar.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
@@ -57,10 +53,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
                 R.drawable.defaults_option_border_bg
             )
         }
-
-
     }
-
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.tv_option_one ->{
