@@ -15,7 +15,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/tv_result"
-    android:layout_marginTop="25dp"
+    android:layout_marginTop="100dp"
     android:text="Result"
     android:textColor="@android:color/white"
     android:textStyle="bold"
@@ -24,20 +24,19 @@
 
     <ImageView
         android:id="@+id/iv_trophy"
-        android:layout_width="194dp"
-        android:layout_height="263dp"
+        android:layout_width="248dp"
+        android:layout_height="240dp"
         android:contentDescription="image"
-        android:src="@drawable/golden_cup_PNG14553"
-        android:layout_marginTop="50dp"
-        ></ImageView>
+        android:src="@drawable/ic_trophy"></ImageView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_congratulations"
-        android:layout_marginTop="16dp"
+
         android:text="Hey, Congratulations!"
         android:textColor="@android:color/white"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         ></TextView>
     <TextView
@@ -46,7 +45,7 @@
         android:id="@+id/tv_name"
         android:layout_marginTop="25dp"
         android:textColor="@android:color/white"
-        android:textSize="22sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         tools:text="Username"
         ></TextView>
@@ -55,7 +54,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_score"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textColor="@android:color/secondary_text_dark"
         tools:text="Your Score is 9 out of 10"
         >
