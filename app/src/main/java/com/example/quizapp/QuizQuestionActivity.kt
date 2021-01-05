@@ -97,6 +97,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
                         intent.putExtra(Constants.correct_answers,mCorrectAnswers)
                         intent.putExtra(Constants.total_questions,mQuestionsList!!.size)
                         startActivity(intent)
+                        finish()
                     }
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
