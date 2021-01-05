@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_quiz_question.*
 import java.util.*
 import kotlin.collections.ArrayList
+import android.content.Intent
 
 class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
 
@@ -19,9 +20,13 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
     private var mQuestionsList:ArrayList<Question>? = null
     private var mSelectionOptionPosition : Int = 0
     private var mCorrectAnswers : Int = 0
+    private var mUsername :String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
+        mUsername = intent.getStringExtra(Constants.username,)
+
         mQuestionsList = Constants.getQuestions()
         setQuestion()
         tv_option_one.setOnClickListener(this)
@@ -87,11 +92,11 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener {
                     if (mCurrentPosition <= mQuestionsList!!.size) {
                         setQuestion()
                     } else {
-                        Toast.makeText(
-                            this,
-                            "You have successfully completed the quiz",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        val intent = Intent(this,ResultActivity::class.java)
+                        intent.putExtra(Constants.username,mUsername)
+                        intent.putExtra(Constants.correct_answers,mCorrectAnswers)
+                        intent.putExtra(Constants.total_questions,mQuestionsList!!.size)
+                        startActivity(intent)
                     }
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
